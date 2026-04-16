@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>🚀 Mini CRM</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Leads</li>
+      <li>Analytics</li>
+      <li>Settings</li>
+    </ul>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome back, Admin 👋</p>
+      </div>
+      <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="card">
+        <p>Total Leads</p>
+        <h2 id="total">0</h2>
+      </div>
+
+      <div class="card">
+        <p>Converted</p>
+        <h2 class="green" id="converted">0</h2>
+      </div>
+
+      <div class="card">
+        <p>New Leads</p>
+        <h2 class="blue" id="new">0</h2>
+      </div>
+    </div>
+
+    <!-- Activity -->
+    <div class="activity">
+      <h3>Recent Activity</h3>
+      <p>✔ New lead added from website</p>
+      <p>✔ Follow-up scheduled</p>
+      <p>✔ Lead converted successfully</p>
+    </div>
+
+    <!-- Add Lead -->
+    <div class="form">
+      <input id="name" placeholder="Name">
+      <input id="email" placeholder="Email">
+      <input id="source" placeholder="Source">
+      <button onclick="addLead()">Add</button>
+    </div>
+
+    <!-- Search -->
+    <input id="search" class="search" placeholder="Search leads..." onkeyup="render()">
+
+    <!-- Table -->
+    <div class="table-box">
+      <h3>Leads</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Source</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="table"></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
